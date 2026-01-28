@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yam Limbu - Project Manager Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+            color: #e6f1ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            padding: 30px 0;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeDown 1s ease-out;
+        }
+        
+        @keyframes fadeDown {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #64ffda, #00a8cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 14px;
+        }
+        
+        .contact-info a {
+            color: #64ffda;
+            text-decoration: none;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #00a8cc;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            padding: 40px 0 80px;
+            min-height: 80vh;
+        }
+        
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #64ffda;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: #a8b2d1;
+            margin-bottom: 30px;
+        }
+        
+        .summary {
+            color: #ccd6f6;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #64ffda, #00a8cc);
+            color: #0a192f;
+            font-weight: 600;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #64ffda;
+            border: 1px solid #64ffda;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        .floating-card {
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .floating-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #64ffda, #00a8cc);
+        }
+        
+        .card-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #64ffda;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-item {
+            background: rgba(23, 42, 69, 0.7);
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: rgba(100, 255, 218, 0.15);
+        }
+        
+        /* Experience Section */
+        .experience {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #64ffda, #00a8cc);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #64ffda;
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 50%;
+            padding-right: 40px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+        
+        .timeline-content {
+            background: rgba(23, 42, 69, 0.8);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #64ffda;
+        }
+        
+        .timeline-content .date {
+            color: #a8b2d1;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+            font-size: 14.5px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #0a192f;
+            border: 3px solid #64ffda;
+            border-radius: 50%;
+            top: 20px;
+            right: -8px;
+        }
+        
+        .timeline-item:nth-child(even):before {
+            right: auto;
+            left: -8px;
+        }
+        
+        /* Certifications */
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .cert-badge {
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 8px;
+            padding: 15px 20px;
+            min-width: 200px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        
+        .cert-badge:hover {
+            transform: translateY(-5px);
+            background: rgba(100, 255, 218, 0.2);
+        }
+        
+        .cert-badge i {
+            font-size: 24px;
+            color: #64ffda;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            margin-top: 50px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .social-links a {
+            color: #ccd6f6;
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #64ffda;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: #a8b2d1;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 40px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 60px;
+            }
+            
+            .timeline-item:before {
+                left: 22px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even):before {
+                left: 22px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .contact-info {
+                align-items: flex-start;
+            }
+            
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animation for timeline items on scroll */
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">YAM LIMBU</div>
+                <div class="contact-info">
+                    <a href="mailto:yamanlimboo@gmail.com"><i class="fas fa-envelope"></i> yamanlimboo@gmail.com</a>
+                    <a href="tel:+9779851148060"><i class="fas fa-phone"></i> +977 9851148060</a>
+                    <a href="https://www.linkedin.com/in/yam-limbu-5143b987" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Project Manager | <span class="highlight">Agile & Scrum</span></h1>
+                        <p class="tagline">Technical Background | Lalitpur, Nepal</p>
+                        <p class="summary">
+                            Project Manager with 10+ years in software development and project leadership, adept at translating business requirements into actionable plans, leading medium-complexity projects, and ensuring timely delivery.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#experience" class="btn btn-primary"><i class="fas fa-briefcase"></i> View Experience</a>
+                            <a href="mailto:yamanlimboo@gmail.com" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="floating-card">
+                            <h3 class="card-title">Core Competencies</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item">Agile & Scrum Project Management</div>
+                                <div class="skill-item">Requirement Gathering</div>
+                                <div class="skill-item">Backlog Prioritization</div>
+                                <div class="skill-item">Risk Assessment</div>
+                                <div class="skill-item">Team Leadership</div>
+                                <div class="skill-item">Stakeholder Engagement</div>
+                                <div class="skill-item">PHP, Laravel, Node.js</div>
+                                <div class="skill-item">QA & Release Management</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Project Manager</h3>
+                            <p class="date">Dryice Solutions Pvt. Ltd. | Nov 2022 to Present</p>
+                            <ul>
+                                <li>Lead medium-complexity projects through the full software lifecycle independently</li>
+                                <li>Develop project schedules, staffing plans, and process frameworks</li>
+                                <li>Manage requirements, change requests, backlog prioritization, and sprint planning</li>
+                                <li>Monitor project health: code quality, security, dependencies, and delivery standards</li>
+                                <li>Provide mentorship and develop talent through guidance and feedback</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Associate Project Manager</h3>
+                            <p class="date">Dryice Solutions Pvt. Ltd. | Sep 2020 to Oct 2022</p>
+                            <ul>
+                                <li>Collaborated with product and development teams to analyze requirements</li>
+                                <li>Developed project reports, risk assessments, and status updates for senior management</li>
+                                <li>Facilitated Agile ceremonies and ensured alignment between business and technical execution</li>
+                                <li>Streamlined communication channels and trained internal departments</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Project Lead Developer</h3>
+                            <p class="date">Dryice Solutions Pvt. Ltd. | Jan 2018 to Aug 2020</p>
+                            <ul>
+                                <li>Led development teams, allocating tasks based on skills and project priorities</li>
+                                <li>Defined software architecture, technology stack, and implementation strategy</li>
+                                <li>Engaged directly with clients to align project deliverables with business vision</li>
+                                <li>Ensured proper documentation, coding standards, and adherence to best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Web Developer</h3>
+                            <p class="date">Dryice Solutions Pvt. Ltd. | Feb 2015 to Dec 2017</p>
+                            <ul>
+                                <li>Developed and maintained web applications using PHP, Laravel, and MySQL</li>
+                                <li>Designed databases, optimized queries, and ensured application security</li>
+                                <li>Participated in complete software lifecycle, from design to deployment</li>
+                                <li>Provided ongoing support, debugging, and code optimization for production systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 class="section-title" style="margin-top: 80px;">Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Scrum Fundamentals Certified (SFC)</h4>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Technology for Product Managers</h4>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Project Initiation: Starting a Successful Project</h4>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Jira Fundamentals Badge</h4>
+                    </div>
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Foundations of Project Management</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="mailto:yamanlimboo@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+9779851148060"><i class="fas fa-phone"></i></a>
+                <a href="https://www.linkedin.com/in/yam-limbu-5143b987" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">© 2023 Yam Limbu. All Rights Reserved.</p>
+            <p class="copyright">Project Manager | Agile & Scrum | Technical Background</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation for timeline items on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
