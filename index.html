@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yam Limbu - Project Manager Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -55,8 +57,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .profile-header {
@@ -76,8 +85,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         .profile-pic-inner {
@@ -179,8 +195,15 @@
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .summary {
@@ -267,7 +290,7 @@
         .skill-card h4 {
             font-size: 1.2rem;
             margin-bottom: 10px;
-            color: var(--light);
+            /* color: var(--light); */
         }
 
         /* Experience Timeline */
@@ -290,12 +313,12 @@
             transform: translateX(-50%);
             width: 3px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            /* background: linear-gradient(to bottom, var(--primary), var(--secondary)); */
             border-radius: 3px;
         }
 
         .timeline-item {
-            width: calc(50% - 30px);
+            /* width: calc(50% - 30px); */
             margin-bottom: 40px;
             position: relative;
             opacity: 0;
@@ -310,7 +333,7 @@
 
         .timeline-item:nth-child(odd) {
             margin-right: auto;
-            text-align: right;
+            text-align: l;
             padding-right: 60px;
         }
 
@@ -395,7 +418,7 @@
         /* Certifications */
         .certifications-section {
             width: 100%;
-            max-width: 900px;
+            /* max-width: 900px; */
             margin-bottom: 80px;
             animation: slideUp 0.8s ease-out 0.9s both;
         }
@@ -430,7 +453,7 @@
 
         .cert-card h4 {
             font-size: 1rem;
-            color: var(--light);
+            /* color: var(--light); */
             line-height: 1.4;
         }
 
@@ -546,22 +569,92 @@
                 max-width: 300px;
                 justify-content: center;
             }
+
+            .timeline:before {
+                /* content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%; */
+                background: linear-gradient(to bottom, var(--primary), var(--secondary));
+                /* border-radius: 3px; */
+            }
+        }
+
+        /* ===== THEME SUPPORT (NON-BREAKING) ===== */
+        body.light {
+            background:linear-gradient(136deg, #edf0f3 0%, #488feb 100%) 
+ /* linear-gradient(135deg, #f8fafc 0%, #488feb 100%) */
+ ;
+            
+            color: #0f172a;
+        }
+
+        body.light .summary,
+        body.light .skill-card,
+        body.light .cert-card,
+        body.light .timeline-content,
+        body.light .contact-item {
+            background: rgba(255, 255, 255, 0.9);
+            color: #0f172a;
+        }
+
+        body.light footer {
+            background: #e5e7eb;
+        }
+
+        body.light a {
+            color: #1d4ed8;
+        }
+
+        /* ===== THEME TOGGLE BUTTON ===== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9999;
+            color: var(--light);
+            font-size: 1.2rem;
+        }
+
+        body.light .theme-toggle {
+            background: white;
+            color: #0f172a;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+
+
+
             <div class="profile-header">
                 <div class="profile-pic">
                     <div class="profile-pic-inner">
-                        YL
+                        <img src="https://img.freepik.com/premium-vector/picture-man-wearing-hat-cap-with-name-tag-it_909058-10974.jpg?semt=ais_hybrid&w=740&q=80">
+                        <!-- <img src="https://img.freepik.com/premium-photo/tech-recruiter-it-project-manager-software-illustration_1297153-26254.jpg"> -->
+                        <!-- YL -->
                     </div>
                 </div>
                 <div class="name-title">
                     <h1 class="name">YAM LIMBU</h1>
                     <div class="title">Project Manager | Agile & Scrum</div>
-                    <div class="subtitle">Technical Background | Lalitpur, Nepal</div>
+                    <div class="title">Technical Background | Lalitpur, Nepal</div>
                 </div>
             </div>
 
@@ -584,10 +677,18 @@
         <main>
             <!-- Summary Section -->
             <section class="summary-section">
-                <div class="summary">
-                    Project Manager with 10+ years in software development and project leadership, adept at translating business requirements into actionable plans, leading medium-complexity projects, and ensuring timely delivery.
+                <div class="summary" id="summaryText">
+                    Project Manager with 10+ years in software development and project leadership, adept at translating
+                    business requirements into actionable plans, leading medium-complexity projects, and ensuring timely
+                    delivery.
                 </div>
             </section>
+            <div style="margin-top:15px; text-align:center;">
+                <button id="ttsBtn" class="cta-btn secondary">
+                    <i class="fas fa-volume-up"></i> Read Summary
+                </button>
+            </div>
+
 
             <!-- CTA Buttons -->
             <div class="cta-section">
@@ -612,6 +713,14 @@
                         <h4>Agile & Scrum Project Management</h4>
                     </div>
                     <div class="skill-card">
+                        <i class="fa-solid fa-comments"></i>
+                        <h4>Communication</h4>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-list-ol"></i>
+                        <h4>Goal Setting</h4>
+                    </div>
+                    <div class="skill-card">
                         <i class="fas fa-list-ol"></i>
                         <h4>Backlog Prioritization</h4>
                     </div>
@@ -621,7 +730,7 @@
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-code"></i>
-                        <h4>PHP, Laravel, Node.js</h4>
+                        <h4>MERN Stackk, LAMP, ReactJS+Python, Full Stack </h4>
                     </div>
                 </div>
             </section>
@@ -638,10 +747,13 @@
                             <span class="company">Dryice Solutions Pvt. Ltd.</span>
                             <span class="duration">Nov 2022 to Present</span>
                             <ul>
-                                <li>Lead medium-complexity projects through the full software lifecycle independently</li>
+                                <li>Lead medium-complexity projects through the full software lifecycle independently
+                                </li>
                                 <li>Develop project schedules, staffing plans, and process frameworks</li>
-                                <li>Manage requirements, change requests, backlog prioritization, and sprint planning</li>
-                                <li>Monitor project health: code quality, security, dependencies, and delivery standards</li>
+                                <li>Manage requirements, change requests, backlog prioritization, and sprint planning
+                                </li>
+                                <li>Monitor project health: code quality, security, dependencies, and delivery standards
+                                </li>
                                 <li>Provide mentorship and develop talent through guidance and feedback</li>
                             </ul>
                         </div>
@@ -656,8 +768,10 @@
                             <span class="duration">Sep 2020 to Oct 2022</span>
                             <ul>
                                 <li>Collaborated with product and development teams to analyze requirements</li>
-                                <li>Developed project reports, risk assessments, and status updates for senior management</li>
-                                <li>Facilitated Agile ceremonies and ensured alignment between business and technical execution</li>
+                                <li>Developed project reports, risk assessments, and status updates for senior
+                                    management</li>
+                                <li>Facilitated Agile ceremonies and ensured alignment between business and technical
+                                    execution</li>
                                 <li>Streamlined communication channels and trained internal departments</li>
                             </ul>
                         </div>
@@ -673,7 +787,8 @@
                             <ul>
                                 <li>Led development teams, allocating tasks based on skills and project priorities</li>
                                 <li>Defined software architecture, technology stack, and implementation strategy</li>
-                                <li>Engaged directly with clients to align project deliverables with business vision</li>
+                                <li>Engaged directly with clients to align project deliverables with business vision
+                                </li>
                                 <li>Ensured proper documentation, coding standards, and adherence to best practices</li>
                             </ul>
                         </div>
@@ -690,7 +805,8 @@
                                 <li>Developed and maintained web applications using PHP, Laravel, and MySQL</li>
                                 <li>Designed databases, optimized queries, and ensured application security</li>
                                 <li>Participated in complete software lifecycle, from design to deployment</li>
-                                <li>Provided ongoing support, debugging, and code optimization for production systems</li>
+                                <li>Provided ongoing support, debugging, and code optimization for production systems
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -725,10 +841,19 @@
             </section>
         </main>
     </div>
+    <script>
+        function setCurrentYear() {
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+        }
 
+        // Run on page load
+        window.onload = setCurrentYear;
+    </script>
     <footer>
         <div class="footer-content">
-            <p>© 2023 Yam Limbu. All Rights Reserved.</p>
+            <p>© <span id="currentYear"></span> <a href="https://yamlimbu.name.np"
+                    style="color: #cbd5e1; text-decoration: none;" target="_blank">Yam Limbu</a> All Rights Reserved.
+            </p>
             <p style="margin-top: 10px; color: #94a3b8;">Project Manager | Agile & Scrum | Technical Background</p>
             <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
                 <a href="mailto:yamanlimboo@gmail.com" style="color: #cbd5e1; text-decoration: none;">
@@ -737,8 +862,12 @@
                 <a href="tel:+9779851148060" style="color: #cbd5e1; text-decoration: none;">
                     <i class="fas fa-phone"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/yam-limbu-5143b987" target="_blank" style="color: #cbd5e1; text-decoration: none;">
+                <a href="https://www.linkedin.com/in/yam-limbu-5143b987" target="_blank"
+                    style="color: #cbd5e1; text-decoration: none;">
                     <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/yamlimbu" target="_blank" style="color: #cbd5e1; text-decoration: none;">
+                    <i class="fab fa-github"></i>
                 </a>
             </div>
         </div>
@@ -746,10 +875,10 @@
 
     <script>
         // Scroll animation for timeline items
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Timeline animation
             const timelineItems = document.querySelectorAll('.timeline-item');
-            
+
             const timelineObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -760,19 +889,19 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-            
+
             timelineItems.forEach(item => {
                 timelineObserver.observe(item);
             });
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
+
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
@@ -786,40 +915,88 @@
             // Add hover effect to all cards
             const cards = document.querySelectorAll('.skill-card, .cert-card, .timeline-content');
             cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = this.classList.contains('timeline-content') 
-                        ? 'scale(1.02) translateY(-5px)' 
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = this.classList.contains('timeline-content')
+                        ? 'scale(1.02) translateY(-5px)'
                         : 'translateY(-8px)';
                 });
-                
-                card.addEventListener('mouseleave', function() {
+
+                card.addEventListener('mouseleave', function () {
                     this.style.transform = 'translateY(0)';
                 });
             });
         });
 
         // Add floating animation to profile picture
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const profilePic = document.querySelector('.profile-pic');
             let floatDirection = 1;
-            
+
             function floatAnimation() {
                 const currentTransform = window.getComputedStyle(profilePic).transform;
                 const matrix = new DOMMatrix(currentTransform);
                 const currentY = matrix.m42;
-                
+
                 if (currentY <= -15) floatDirection = 1;
                 if (currentY >= 0) floatDirection = -1;
-                
+
                 profilePic.style.transform = `translateY(${currentY + floatDirection * 0.5}px)`;
                 requestAnimationFrame(floatAnimation);
             }
-            
+
             // Start animation after a delay
             setTimeout(() => {
                 requestAnimationFrame(floatAnimation);
             }, 1000);
         });
     </script>
+
+
+<script>
+/* ===== THEME TOGGLE ===== */
+const toggleBtn = document.getElementById("themeToggle");
+const icon = toggleBtn.querySelector("i");
+
+function setTheme(theme) {
+    if (theme === "light") {
+        document.body.classList.add("light");
+        icon.className = "fas fa-sun";
+    } else {
+        document.body.classList.remove("light");
+        icon.className = "fas fa-moon";
+    }
+    localStorage.setItem("theme", theme);
+}
+
+// Load saved theme
+setTheme(localStorage.getItem("theme") || "dark");
+
+toggleBtn.addEventListener("click", () => {
+    const isLight = document.body.classList.contains("light");
+    setTheme(isLight ? "dark" : "light");
+});
+
+/* ===== TEXT TO SPEECH ===== */
+const ttsBtn = document.getElementById("ttsBtn");
+const summaryText = document.getElementById("summaryText");
+
+ttsBtn.addEventListener("click", () => {
+    speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(
+        summaryText.innerText
+    );
+
+    utterance.rate = 0.95;
+    utterance.pitch = 1;
+    utterance.lang = "en-US";
+
+    speechSynthesis.speak(utterance);
+});
+</script>
+
+
+
 </body>
+
 </html>
